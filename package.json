@@ -1,0 +1,90 @@
+{
+  "name": "ai-security-agent",
+  "displayName": "AI Security Agent",
+  "description": "AI Security Agent that scans OWASP vulnerabilities",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "ai-security-agent.scan",
+        "title": "AI Security: Scan Project"
+      },
+      {
+        "command": "ai-security.suggestFix",
+        "title": "AI Security: Suggest Fix"
+      },
+      {
+        "command": "ai-security.explain",
+        "title": "AI Security: Explain"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "ai-security.suggestFix",
+          "when": "editorHasSelection",
+          "group": "navigation"
+        },
+        {
+          "command": "ai-security.explain",
+          "when": "editorHasSelection",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "AI Security Agent",
+      "properties": {
+        "ai-security.semgrepPath": {
+          "type": "string",
+          "default": "",
+          "description": "Full path to semgrep executable"
+        },
+        "ai-security.enableAutoScan": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically scan the entire workspace when a file is saved"
+        },
+        "ai-security.backendUrl": {
+          "type": "string",
+          "default": "http://localhost:8000",
+          "description": "AI backend API URL"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/vscode": "^1.120.0",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.39.3",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1",
+    "webpack": "^5.105.3",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "axios": "^1.16.1"
+  }
+}
