@@ -142,5 +142,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Demo Pictures
 
 ![demopic1](images/demo1.png)
-![demopic2](images/demo1.png)
-![demopic3](images/demo1.png)
+![demopic2](images/demo2.png)
+![demopic3](images/demo3.png)
