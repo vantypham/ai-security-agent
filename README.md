@@ -10,6 +10,8 @@ I also plan to develop a VS Code extension that triggers local tools such as Sem
 ### Core AI backend (Python/FastAPI + LLM orchestration)
 Acts as the central services for analysis and coordination.
 
+![diagram](architect.png)
+
 ### Multiple clients:
 - VS Code extension (THIS) - VS Code Extension → local Semgrep/Gitleaks → send findings → FastAPI → OpenAI → remediation suggestions.
 - GitHub Actions
