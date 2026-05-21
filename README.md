@@ -6,6 +6,8 @@ In the design, I will have a core AI backend that exposes APIs written in Python
 
 I also plan to develop a VS Code extension that triggers local tools such as Semgrep and Gitleaks to identify OWASP Top 10 issues and other customizable company security rules and policies
 
+[VS Code Extension - AI Sec Agent](https://github.com/vantypham/ai-security-agent) | [Core Backend Services](https://github.com/vantypham/ai-security-agent-backend-services)
+
 ## ARCHITECTURE
 ### Core AI backend (Python/FastAPI + LLM orchestration)
 Acts as the central services for analysis and coordination.
