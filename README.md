@@ -41,17 +41,13 @@ VS Code Extension
       ↓
 Local scanners
 
-├── Semgrep
-├── Gitleaks
-├── Custom Policy Engine
-└── Compliance Engine
-
-      ↓
-
+- Semgrep
+- Gitleaks
+- Custom Policy Engine
+- Compliance Engine
+then,
 Unified findings JSON
-
-      ↓
-
+then,
 AI Backend
 
 ### AI layer:
@@ -91,48 +87,48 @@ npm run compile
 
 ## VS Code Extension
 
-├── SAST
-│     ├── Semgrep
-│     ├── CodeQL
-│     └── SonarQube/SonarLint
-│
-├── Secrets
-│     ├── Gitleaks
-│     └── TruffleHog
-│
-├── Dependencies
-│     ├── Snyk
-│     ├── Dependency-Check
-│     └── Dependency-Track
-│
-├── IaC / Config
-│     ├── Checkov
-│     ├── KICS
-│     └── Terrascan
-│
-├── AI reasoning
-│     └── FastAPI + LLM
-│
-└── Custom Policies
+SAST
+- Semgrep
+- CodeQL
+- SonarQube/SonarLint
+
+Secrets
+- Gitleaks
+- TruffleHog
+
+Dependencies
+- Snyk
+- Dependency-Check
+- Dependency-Track
+
+IaC / Config
+- Checkov
+- KICS
+- Terrascan
+
+AI reasoning
+- FastAPI + LLM
+
+Custom Policies
 
 ## Scanning strategy
 Ctrl+S
-   ↓
+then,
 Fast local scan (<3 sec)
 
-Semgrep
-Gitleaks
-Custom rules
-
+- Semgrep
+- Gitleaks
+- Custom rules
+then,
 Background scan
 
-CodeQL
-Dependency analysis
-Compliance checks
-
+- CodeQL
+- Dependency analysis
+- Compliance checks
+then,
 PR / Jenkins full scan
 
-Everything
+- Everything
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
